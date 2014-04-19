@@ -1,0 +1,97 @@
+/* CSS! */
+
+#tustin-pkmnkb-container {
+	float:right;
+}
+
+#pkmnKeyboard {
+	position: relative;
+	width: 240px; height:160px;
+	background-image: url("http://tustin2121.github.io/TPPNamingKeyboard/KeyboardAtlas.png");
+	/*background-size: 240px 160px;*/
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+#pkmnKeyboard .kb {
+	position: absolute;
+	width: 168px; height:76px;
+	top: 171px; left:13px;
+	z-index: 8;
+	background-image: url("http://tustin2121.github.io/TPPNamingKeyboard/KeyboardAtlas.png");
+	/*background-size: 168px 76px;*/
+	background-repeat: no-repeat;
+}
+
+#pkmnKeyboard .kb.upper {
+	background-position: -13px -162px;
+}
+
+#pkmnKeyboard .kb.lower {
+	background-position: -13px -239px;
+}
+
+#pkmnKeyboard .kb.other {
+	background-position: -13px -316px;
+}
+
+#pkmnKeyboard .carat {
+	position: absolute;
+	width: 8px; height: 5px;
+	top: 162px; left: 3px;
+	background-position: -3px -162px;
+	background-image: url("http://tustin2121.github.io/TPPNamingKeyboard/KeyboardAtlas.png");
+	/*background-size: 168px 76px;*/
+	background-repeat: no-repeat;
+}
+
+#pkmnKeyboard .name-field {
+	position: absolute;
+	width: 96px; height: 13px;
+	top: 42px; left: 73px;
+	z-index: 2;
+	font-family: monospace;
+	font-size: 13px;
+}
+
+#pkmnKeyboard .select {
+	position: absolute;
+	width: 38px; height: 25px;
+	top: 70px; left: 187px;
+	background-position: -187px -162px;
+	background-image: url("http://tustin2121.github.io/TPPNamingKeyboard/KeyboardAtlas.png");
+	/*background-size: 168px 76px;*/
+	background-repeat: no-repeat;
+}
+
+#pkmnKeyboard .select.lower {
+	background-position: -187px -162px;
+}
+#pkmnKeyboard .select.upper {
+	background-position: -187px -188px;
+}
+#pkmnKeyboard .select.other {
+	background-position: -187px -214px;
+}
+
+/* Animated cursor using CSS ANIMATIONS!!! :D :D :D :D */
+#pkmnKeyboard .cursor {
+	position: absolute;
+	z-index: 100;
+	top: 30px; left:30px;
+	width: 12px; height: 16px;
+	background-image: url("http://tustin2121.github.io/TPPNamingKeyboard/KeyboardAtlas.png");
+	/*background-size: 12px 16px;*/
+	animation: CursorBlink 1s steps(3) infinite;
+	-webkit-animation: CursorBlink 1s steps(3) infinite;
+}
+
+@keyframes CursorBlink {
+	from { background-position: -184px -244px; }
+	to   { background-position: -223px -244px; }
+}
+
+@-webkit-keyframes CursorBlink {
+	from { background-position: -184px -244px; }
+	to   { background-position: -223px -244px; }
+}
