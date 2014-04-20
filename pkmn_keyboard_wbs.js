@@ -165,7 +165,7 @@ var __characters = {
 var KBOFFSET = {x:13, y:71};
 var CARATOFF = {x:73, y:56};
 
-var NAMELIMIT = 8;
+var NAMELIMIT = 10;
 var UPPERKB, LOWERKB, OTHERKB;
 var SELECTDIV;
 var CURSOR, CARAT;
@@ -238,11 +238,12 @@ function switchToKeyboard(kbname) {
 
 function insertChar(key) {
 	var kinfo = __characters[key];
+	var kb = __keyboard[CursorPos.kb];
 	
 	if (kinfo.special) {
 		switch (key) {
 			case "select":
-				switchToKeyboard(__keyboard[CursorPos.kb].next);
+				switchToKeyboard(kb.next);
 				return;
 			case "back":
 				//currName = currName.substr(0, currName.length-1);
@@ -255,6 +256,12 @@ function insertChar(key) {
 	} else {
 		var c = key;
 		if (kinfo.c) c = kinfo.c;
+		
+		f (currName.length+1 >= NAMELIMIT && currName.length < NAMELIMIT) {
+			//Select the "OK" button when we first hit the limit
+			CursorPos.x = kb.cols-1;
+			CursorPos.y = kb.rows-1;
+		}
 		
 		if (currName.length >= NAMELIMIT) {
 			currName[currName.length-1] = c;
