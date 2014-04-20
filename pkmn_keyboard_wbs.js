@@ -371,7 +371,7 @@ $(function(){
 		chatinterface.after("<div id='tustin-pkmnkb-container'>");
 		
 		var cont = $("#tustin-pkmnkb-container");
-		var path = "https://dl.dropboxusercontent.com/u/3311718/TPPChatKeyboard/";
+		var path = "http://tustin2121.github.io/TPPNamingKeyboard/";
 		cont.append("<link rel='stylesheet' type='text/css' href='"+path+"pkmn_keyboard.css'>");
 		
 		AREA = $("<div id='pkmnKeyboard'>").appendTo(cont);
