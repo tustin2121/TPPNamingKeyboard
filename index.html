@@ -1,6 +1,6 @@
 <html>
 <head>
-	
+	<link rel='stylesheet' type='text/css' href='pkmn_keyboard.css'>
 </head>
 <body>
 	<img src="preview.png" style="float:left; margin-right: 10px;">
@@ -10,8 +10,52 @@
 	<p>Open up your TwitchPlaysPokemon Twitch chat (this has only been tested with the popout chat, so if it fails to work, pop out the chat).</p>
 	<p>In the url bar, paste the following code (or use it as a bookmarklet):</p>
 	<pre>javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://tustin2121.github.io/TPPNamingKeyboard/pkmn_keyboard.js';})();</pre>
+	<p>If you cannot make it work by pasting or as a bookmark, scroll down and see instructions on how to use the Developer Console of your browser.</p>
+<!--	<p>Or! Drag the following image onto the chat!</p>
+	<a id="pkmnKeyboard" style="display:block;" href="javascript://(function(){document.body.appendChild(document.createElement('script')).src='http://tustin2121.github.io/TPPNamingKeyboard/pkmn_keyboard.js';})();"></a>-->
 	<p>Click on the naming window that appears in the top corner! The keyboard pulls commands out of the chat stream and converts it into the appropriate inputs on the keyboard!</p>
 	<p>To mitigate the effects of the "Running" combo on naming, all "B+Direction" commands are collapsed to simply "direction" commands. All combos beyond that are collapsed to only the first command in a combo.</p>
 	<h3>Enjoy!</h3>
+	
+	<div style="clear:both;"></div>
+	
+	<h2>Developer Console Option</h2>
+	<p>If for whatever reason, pasting the URL does not work or causes the page to load a different page, and the bookmark option is not desirable, you can past the following code into the developer console of your browser. Please check the instructions for each browser if you don't know how to do this.</p>
+	<pre>document.body.appendChild(document.createElement('script')).src='http://tustin2121.github.io/TPPNamingKeyboard/pkmn_keyboard.js';</pre>
+	
+	<h3>Chrome:</h3>
+	<ol>
+		<li>Under the menu, go to Tools > Developer tools.<br/>
+		A window will appear either embedded on the bottom or side of the page, or will pop up as a separate window.</li>
+		<li>Go to the "Console" tab.</li>
+		<li>Paste the above code in there and hit enter. You should see "LOADING Pokemon Keyboard by Tustin2121!" if it worked.</li>
+		<li>You may now close the tools.</li>
+	</ol>
+	
+	<h3>Firefox:</h3>
+	<ol>
+		<li>Under the Firefox menu, go to Web Developer > Web Console. A window embedded on the bottom of the page will appear.</li>
+		<li>Paste the above code into the area with the ">" symbol, and hit enter. You should see "LOADING Pokemon Keyboard by Tustin2121!" if it worked.</li>
+		<li>You may now close the tools.</li>
+	</ol>
+	
+	<h3>Safari (Mac):</h3>
+	<ol>
+		<li>Go to Google and Download Chrome or Firefox.</li>
+		<li>If you skipped step one, things get a little hairy. You cannot open the Developer Tools without first enabling them in the Preferences.<br/>Go to Safari > Preferences, at the bottom of the Advanced tab. Check the box labeled "Show Develop menu in menu bar"</li>
+		<li>Bring focus back to the chat window and under the newly unhidden Develop menu, click on to Show Web Inspector. A window embedded on the bottom of the page will appear.</li>
+		<li>Click the icon that looks like a greater-than symbol sticking into a stack of three lines. This may or may not read "Console" next to it.</li>
+		<li>Paste the above code into the bottom line with the ">" symbol, and hit enter. You should see "LOADING Pokemon Keyboard by Tustin2121!" if it worked.</li>
+		<li>You may now close the tools and disable the Develop menu again if you wish.</li>
+	</ol>
+	
+	<h3>Internet Explorer (Windows):</h3>
+	<ol>
+		<li>Go to Google and Download Chrome or Firefox.</li>
+		<li>If you skipped step one: Press the F12 key when focused on the brower. A window embedded on the bottom of the page will appear.</li>
+		<li>Find the Console tab, it has an icon with a greater-than symbol in a box.</li>
+		<li>Paste the above code into the bottom line with the ">" symbol, and hit enter. You should see "LOADING Pokemon Keyboard by Tustin2121!" if it worked.</li>
+		<li>Press the F12 key again to close the tools.</li>
+	</ol>
 </body>
 </html>
