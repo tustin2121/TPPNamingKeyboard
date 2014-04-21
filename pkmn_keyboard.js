@@ -157,13 +157,13 @@ var __characters = {
 	"'c" : {x :103, y : 52, c : "&rsquo;"},
 	" 10": {x :125, y : 52, c : " "},
 	 
-	 "select" : {x : 187, y :  0, special:true},
-	 "back"   : {x : 187, y : 26, special:true},
-	 "ok"     : {x : 187, y : 48, special:true},
+	 "select" : {x : 181, y :  0, special:true},
+	 "back"   : {x : 181, y : 29, special:true},
+	 "ok"     : {x : 181, y : 51, special:true},
 };
 
-var KBOFFSET = {x:13, y:71};
-var CARATOFF = {x:73, y:56};
+var KBOFFSET = {x:17, y:70};
+var CARATOFF = {x:93, y:56};
 
 var NAMELIMIT = 10;
 var UPPERKB, LOWERKB, OTHERKB;
@@ -232,8 +232,15 @@ function switchToKeyboard(kbname) {
 	
 	SELECTDIV.removeClass("upper lower other").addClass(__keyboard[kbname].next);
 	
+	//CursorPos.x = CursorPos.y = 0;
+	// Allow the cursor to try and stay on the keyboard
+	// If on one of the right side buttons, translate
+	if (CursorPos.x == __keyboard[CursorPos.kb].cols-1)
+		CursorPos.x = __keyboard[kbname].cols-1;
+	else
+	if (CursorPos.x > __keyboard[kbname].cols-2) 
+		CursorPos.x = __keyboard[kbname].cols-2;
 	CursorPos.kb = kbname;
-	CursorPos.x = CursorPos.y = 0;
 }
 
 function insertChar(key) {
